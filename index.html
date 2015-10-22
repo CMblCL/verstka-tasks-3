@@ -6,13 +6,194 @@
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
-        <!-- Поле для фильтрации по городу -->
-        <input
-            type="text"
-            placeholder="Город отправления"
-            value=""
-            onkeyup="this.setAttribute('value', this.value)">
+        <header>
+            <h1>Расписание рейсов</h1>
+        </header>
+        <section>
+            <label for="city">Фильтр по городу:</label>
+            <input
+                id="city"
+                type="text"
+                placeholder="Город отправления"
+                value=""
+                onkeyup="this.setAttribute('value', this.value)">
+                
+            <table class="timetable">
+                <tr>
+                    <th>Тип рейса</th>
+                    <th>Рейс №</th>
+                    <th>Авиакомпания</th>
+                    <th>Тип <abbr title="Воздушное судно">ВС</abbr></th>
+                    <th>Место назначения</th>
+                    <th>Терминал</th>
+                    <th>Плановое время</th>
+                    <th>Статус</th>
+                </tr>
 
-        <!-- Здесь применять вашу самую сильную магию -->
+                <tr>
+                    <td><img src="to.png" alt="Вылет" title="Вылет" class="type"></td>
+                    <td>AZ-3775</td>
+                    <td><img src="Alitalia.gif" alt="Alitalia" class="logo" title="Alitalia"></td>
+                    <td>B-737-800W</td>
+                    <td>Москва</td>
+                    <td>1</td>
+                    <td><time datetime="2015-10-21Т08:15:00+04:00">21 Окт 08:15</time></td>
+                    <td class="end">Вылетел</td>
+                </tr>
+                <tr>
+                    <td><img src="from.png" alt="Прилёт" title="Прилёт" class="type"></td>
+                    <td>7R-720</td>
+                    <td><img src="RusLine.gif" alt="РусЛайн" class="logo" title="РусЛайн"></td>
+                    <td>CRJ-100</td>
+                    <td>Екатеринбург</td>
+                    <td>2</td>
+                    <td><time datetime="2015-10-21Т10:00:00+04:00">21 Окт 10:00</time></td>
+                    <td class="end">Приземлился</td>
+                </tr>
+                <tr>
+                    <td><img src="from.png" alt="Прилёт" title="Прилёт" class="type"></td>
+                    <td>S7-55</td>
+                    <td><img src="SibirS7.gif" alt="Сибирь S7" class="logo" title="Сибирь S7"></td>
+                    <td>A-319</td>
+                    <td>Екатеринбург</td>
+                    <td>3</td>
+                    <td><time datetime="2015-10-21Т10:05:00+04:00">21 Окт 10:05</time></td>
+                    <td class="warning">Задерживается до <time datetime="2015-10-21Т22:05:00+04:00">22:05</time></td>
+                </tr>
+                <tr>
+                    <td><img src="to.png" alt="Вылет" title="Вылет" class="type"></td>
+                    <td>AZ-3784</td>
+                    <td><img src="Alitalia.gif" alt="Alitalia" class="logo" title="Alitalia"></td>
+                    <td>B-737-800W</td>
+                    <td>Москва</td>
+                    <td>1</td>
+                    <td><time datetime="2015-10-21Т15:30:00+04:00">21 Окт 15:30</time></td>
+                    <td class="end">Вилетел</td>
+                </tr>
+                <tr>
+                    <td><img src="from.png" alt="Прилёт" title="Прилёт" class="type"></td>
+                    <td>SU-5344</td>
+                    <td><img src="Aeroflot.gif" alt="Аэрофлот - Российские Авиалинии" class="logo" title="Аэрофлот - Российские Авиалинии"></td>
+                    <td>A-319</td>
+                    <td>Екатеринбург</td>
+                    <td>4</td>
+                    <td><time datetime="2015-10-21Т21:50:00+04:00">21 Окт 12:50</time></td>
+                    <td class="end">Приземлился</td>
+                </tr>
+                <tr>
+                    <td><img src="to.png" alt="Вылет" title="Вылет" class="type"></td>
+                    <td>DP-405</td>
+                    <td><img src="Pobeda.gif" alt="Победа" class="logo" title="Победа"></td>
+                    <td>B-737-800W</td>
+                    <td>Москва</td>
+                    <td>1</td>
+                    <td><time datetime="2015-10-21Т18:15:00+04:00">21 Окт 18:15</time></td>
+                    <td class="end">Посадка закончена</td>
+                </tr>
+                <tr>
+                    <td><img src="to.png" alt="Вылет" title="Вылет" class="type"></td>
+                    <td>S7-56</td>
+                    <td><img src="SibirS7.gif" alt="Сибирь S7" class="logo" title="Сибирь S7"></td>
+                    <td>A-319</td>
+                    <td>Москва</td>
+                    <td>6</td>
+                    <td><time datetime="2015-10-22Т00:15:00+04:00">22 Окт 00:15</time></td>
+                    <td class="onTime">Регистрация</td>
+                </tr>
+                <tr>
+                    <td><img src="to.png" alt="Вылет" title="Вылет" class="type"></td>
+                    <td>SU-5853</td>
+                    <td><img src="Aeroflot.gif" alt="Аэрофлот - Российские Авиалинии" class="logo" title="Аэрофлот - Российские Авиалинии"></td>
+                    <td>B-737-800W</td>
+                    <td>Симферополь</td>
+                    <td>1</td>
+                    <td><time datetime="2015-10-21Т16:15:00+04:00">21 Окт 16:15</time></td>
+                    <td class="end">Посадка закончена</td>
+                </tr>
+                <tr>
+                    <td><img src="to.png" alt="Вылет" title="Вылет" class="type"></td>
+                    <td>SU-5345</td>
+                    <td><img src="Aeroflot.gif" alt="Аэрофлот - Российские Авиалинии" class="logo" title="Аэрофлот - Российские Авиалинии"></td>
+                    <td>A-319</td>
+                    <td>Краснодар</td>
+                    <td>5</td>
+                    <td><time datetime="2015-10-21Т17:45:00+04:00">21 Окт 17:45</time></td>
+                    <td class="onTime">Регистрация</td>
+                </tr>
+                <tr>
+                    <td><img src="from.png" alt="Прилёт" title="Прилёт" class="type"></td>
+                    <td>AZ-3784</td>
+                    <td><img src="Alitalia.gif" alt="Alitalia" class="logo" title="Alitalia"></td>
+                    <td>B-737-800W</td>
+                    <td>Екатеринбург</td>
+                    <td>1</td>
+                    <td><time datetime="2015-10-21Т13:30:00+04:00">21 Окт 13:30</time></td>
+                    <td class="end">Приземлился</td>
+                </tr>
+                <tr>
+                    <td><img src="to.png" alt="Вылет" title="Вылет" class="type"></td>
+                    <td>UT-128</td>
+                    <td><img src="UTair.gif" alt="ЮТэйр" class="logo" title="ЮТэйр"></td>
+                    <td>AT-72-5</td>
+                    <td>Сургут</td>
+                    <td>3</td>
+                    <td><time datetime="2015-10-22Т19:50:00+04:00">22 Окт 19:50</time></td>
+                    <td class="onTime">Регистрация</td>
+                </tr>
+                <tr>
+                    <td><img src="to.png" alt="Вылет" title="Вылет" class="type"></td>
+                    <td>S7-56</td>
+                    <td><img src="SibirS7.gif" alt="Сибирь S7" class="logo" title="Сибирь S7"></td>
+                    <td>B-737-800W</td>
+                    <td>Москва</td>
+                    <td>5</td>
+                    <td><time datetime="2015-10-21Т23:10:00+04:00">21 Окт 23:10</time></td>
+                    <td class="warning">Отменён</td>
+                </tr>
+                <tr>
+                    <td><img src="to.png" alt="Вылет" title="Вылет" class="type"></td>
+                    <td>DP-408</td>
+                    <td><img src="Pobeda.gif" alt="Победа" class="logo" title="Победа"></td>
+                    <td>B-737-800W</td>
+                    <td>Москва</td>
+                    <td>3</td>
+                    <td><time datetime="2015-10-21Т16:50:00+04:00">21 Окт 16:50</time></td>
+                    <td class="onTime">Ожидание посадки</td>
+                </tr>
+                <tr>
+                    <td><img src="to.png" alt="Вылет" title="Вылет" class="type"></td>
+                    <td>S7-4571</td>
+                    <td><img src="SibirS7.gif" alt="Сибирь S7" class="logo" title="Сибирь S7"></td>
+                    <td>A-319</td>
+                    <td>Пекин</td>
+                    <td>3</td>
+                    <td><time datetime="2015-10-22Т19:00:00+04:00">21 Окт 19:00</time></td>
+                    <td class="onTime">Регистрация</td>
+                </tr>
+                <tr>
+                    <td><img src="from.png" alt="Прилёт" title="Прилёт" class="type"></td>
+                    <td>UT-4109</td>
+                    <td><img src="UTair.gif" alt="ЮТэйр" class="logo" title="ЮТэйр"></td>
+                    <td>B-737-700</td>
+                    <td>Екатеринбург</td>
+                    <td>-</td>
+                    <td><time datetime="2015-10-22Т00:25:00+04:00">22 Окт 00:25</time></td>
+                    <td class="inProcess">Летит</td>
+                </tr>
+            </table>
+        </section>
+        <section>
+            <header>
+                <h2>Получить информацию о рейсе</h2>
+            </header>
+            <p>Чтобы получить информацию о Вашем рейсе, введите свои контактные данные.</p>
+            <form class='sendInfo'>
+                <label for='email'>Email:</label>
+                <input type='email' id='email' name='email' placeholder="email@example.com" required>
+                <label for='phone'>Номер телефона:</label>
+                <input type='tel' id='phone' name='phone' placeholder="+79000000000" pattern="+[0-9]{11,16}" required>
+                <button type='submit'>Отправить данные о рейсе на телефон</button>
+            </form>
+        </section>
     </body>
 </html>
