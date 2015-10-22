@@ -14,7 +14,7 @@
                 type="text"
                 placeholder="Город отправления"
                 value=""
-                onkeyup="this.setAttribute('value', this.value)">
+                onkeyup="this.setAttribute("value", this.value)">
 
             <table class="timetable">
                 <tr>
@@ -205,12 +205,23 @@
                 <h2>Получить информацию о рейсе</h2>
             </header>
             <p>Чтобы получить информацию о Вашем рейсе, введите свои контактные данные.</p>
-            <form class='sendInfo'>
-                <label for='email'>Email:</label>
-                <input type='email' id='email' name='email' placeholder="email@example.com" required>
-                <label for='phone'>Номер телефона:</label>
-                <input type='tel' id='phone' name='phone' placeholder="79000000000" pattern="[0-9]{11,16}" required>
-                <button type='submit'>Отправить данные о рейсе на телефон</button>
+            <form class="sendInfo">
+                <label for="email">Email:</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="email@example.com"
+                    required>
+                <label for="phone">Номер телефона:</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="79000000000"
+                    pattern="[0-9]{11,16}"
+                    required>
+                <button type="submit">Отправить данные о рейсе на телефон</button>
             </form>
         </section>
     </body>
