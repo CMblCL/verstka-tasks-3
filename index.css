@@ -1,0 +1,74 @@
+body{
+    font-family: Arial, serif;
+}
+
+.timetable
+{
+    background-color: #FFF;
+    text-align: center;
+    border-collapse: collapse;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.timetable td
+{
+    border: 1px solid #000;
+}
+
+.timetable th
+{
+    padding: 3px;
+    border: 1px solid #000;
+    background-color: #AAA;
+    font-size: 18px;
+}
+
+.timetable tr:nth-of-type(odd)
+{
+    background-color: #C1C1C1;
+}
+
+.timetable tr:hover
+{
+    background-color: #A2A2A2;
+}
+
+.sendInfo input:valid ~ input:valid ~ button
+{
+    display: block;
+}
+
+.sendInfo button
+{
+    display: none;
+}
+
+img.type
+{
+    width: 40px;
+}
+
+img.logo
+{
+    vertical-align: middle;
+    height: 30px;
+}
+
+.warning {
+    color: #F00;
+    font-weight: bold;
+}
+
+.onTime {
+    color: #14A012;
+    font-weight: bold;
+}
+
+.end {
+    color: #7B7B7B;
+}
+
+.inProcess {
+    color: #000;
+}
