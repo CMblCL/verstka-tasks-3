@@ -4,7 +4,7 @@ body{
 
 .timetable
 {
-    background-color: #FFF;
+    background-color: #fff;
     text-align: center;
     border-collapse: collapse;
     font-size: 14px;
@@ -20,18 +20,18 @@ body{
 {
     padding: 3px;
     border: 1px solid #000;
-    background-color: #AAA;
+    background-color: #aaa;
     font-size: 18px;
 }
 
 .timetable tr:nth-of-type(odd)
 {
-    background-color: #C1C1C1;
+    background-color: #c1c1c1;
 }
 
 .timetable tr:hover
 {
-    background-color: #A2A2A2;
+    background-color: #a2a2a2;
 }
 
 .sendInfo input:valid ~ input:valid ~ button
@@ -44,29 +44,29 @@ body{
     display: none;
 }
 
-img.type
+.type
 {
     width: 40px;
 }
 
-img.logo
+.logo
 {
     vertical-align: middle;
     height: 30px;
 }
 
 .warning {
-    color: #F00;
+    color: #f00;
     font-weight: bold;
 }
 
 .onTime {
-    color: #14A012;
+    color: #14a012;
     font-weight: bold;
 }
 
 .end {
-    color: #7B7B7B;
+    color: #7b7b7b;
 }
 
 .inProcess {
