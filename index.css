@@ -110,7 +110,7 @@ button.send-info
 }
 
 #city[value = ""] ~ .timetable tr,
-#flight-type[value = "all"]:checked ~.timetable tr,
+#flight-type[value = ""]:checked ~.timetable tr,
 #flight[value = ""] ~.timetable tr
 {
     display: table-row;
