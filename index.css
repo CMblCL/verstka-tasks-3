@@ -25,21 +25,6 @@ body
     font-size: 18px;
 }
 
-.timetable tr:nth-of-type(odd)
-{
-    background-color: #c1c1c1;
-}
-
-.timetable tr:hover
-{
-    background-color: #a2a2a2;
-}
-
-.send-info input:valid ~ input:valid ~ button
-{
-    display: block;
-}
-
 .type
 {
     width: 40px;
@@ -73,25 +58,87 @@ body
     color: #000;
 }
 
-.send-button
+.send-info input.send-info:valid ~ input.send-info:valid ~ button.send-info
+{
+    display: inline;
+}
+
+input.send-info
+{
+    margin: 5px;
+    padding: 1px;
+}
+
+label.send-info
+{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+button.send-info
 {
     margin: 5px;
     display: none;
     font-size: 14px;
 }
 
-.input
+#city[value = "Екатеринбург"] ~ .timetable tbody tr:not([data-city = "Екатеринбург"]),
+#city[value = "Москва"] ~ .timetable tbody tr:not([data-city = "Москва"]),
+#city[value = "Симферополь"] ~ .timetable tbody tr:not([data-city = "Симферополь"]),
+#city[value = "Краснодар"] ~ .timetable tbody tr:not([data-city = "Краснодар"]),
+#city[value = "Сургут"] ~ .timetable tbody tr:not([data-city = "Сургут"]),
+#city[value = "Пекин"] ~ .timetable tbody tr:not([data-city = "Пекин"]),
+#flight-type[value = "to"]:checked  ~.timetable tbody tr:not([data-flight-type = "to"]),
+#flight-type[value = "from"]:checked  ~.timetable tbody tr:not([data-flight-type = "from"]),
+#flight[value = "AZ-3775"]  ~.timetable tbody tr:not([data-flight = "AZ-3775"]),
+#flight[value = "7R-720"]  ~.timetable tbody tr:not([data-flight = "7R-720"]),
+#flight[value = "S7-55"]  ~.timetable tbody tr:not([data-flight = "S7-55"]),
+#flight[value = "AZ-3785"]  ~.timetable tbody tr:not([data-flight = "AZ-3785"]),
+#flight[value = "SU-5344"]  ~.timetable tbody tr:not([data-flight = "SU-5344"]),
+#flight[value = "DP-405"]  ~.timetable tbody tr:not([data-flight = "DP-405"]),
+#flight[value = "S7-56"]  ~.timetable tbody tr:not([data-flight = "S7-56"]),
+#flight[value = "SU-5853"]  ~.timetable tbody tr:not([data-flight = "SU-5853"]),
+#flight[value = "SU-5345"]  ~.timetable tbody tr:not([data-flight = "SU-5345"]),
+#flight[value = "AZ-3784"]  ~.timetable tbody tr:not([data-flight = "AZ-3784"]),
+#flight[value = "UT-128"]  ~.timetable tbody tr:not([data-flight = "UT-128"]),
+#flight[value = "S7-60"]  ~.timetable tbody tr:not([data-flight = "S7-60"]),
+#flight[value = "DP-408"]  ~.timetable tbody tr:not([data-flight = "DP-408"]),
+#flight[value = "S7-4571"]  ~.timetable tbody tr:not([data-flight = "S7-4571"]),
+#flight[value = "UT-4109"]  ~.timetable tbody tr:not([data-flight = "UT-4109"])
 {
-    margin: 5px;
-    padding: 1px;
+    display: none;
 }
 
-.label
+#city[value = ""] ~ .timetable tr,
+#flight-type[value = "all"]:checked ~.timetable tr,
+#flight[value = ""] ~.timetable tr
 {
-    font-size: 14px;
-    font-weight: bold;
+    display: table-row;
 }
 
-col:hover {
-    background-color:red;
+label.flight-type,
+label.city,
+label.flight
+{
+    display: inline;
+    margin: 0;
+}
+
+input.flight-type,
+input.city,
+input.flight
+{
+    display: inline;
+    margin: 0 5px 15px;
+}
+
+.timetable tr:nth-of-type(odd)
+{
+    background-color: #c1c1c1;
+}
+
+.timetable tr:hover,
+.timetable tr td:hover
+{
+    background-color: #a2a2a2;
 }
