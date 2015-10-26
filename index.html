@@ -6,271 +6,376 @@
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
+        <header>
+            <h1>Расписание рейсов</h1>
+        </header>
         <section>
-            <h2>Расписание рейсов</h2>
-            <label for="city" class="label">Фильтр по городу:</label>
+            <label for="city" class="city">Фильтр по городу:</label>
             <input
                 id="city"
-                class="input"
-                type="text"
+                class="city"
                 placeholder="Введите город"
                 value=""
-                onkeyup="this.setAttribute('value', this.value)">
+                onkeyup="this.setAttribute('value', this.value)"
+            ><br>
+
+            <label for="flight-type" class="flight-type">Фильтр по типу рейса:</label>
+            <input type="radio" name="flight-type" id="flight-type" class="flight-type" value="all" checked> Все
+            <input type="radio" name="flight-type" id="flight-type" class="flight-type" value="from"> Прилёт
+            <input type="radio" name="flight-type" id="flight-type" class="flight-type" value="to"> Вылет<br>
+
+            <label for="flight" class="flight">Фильтр по номеру рейса:</label>
+            <input
+                id="flight"
+                class="flight"
+                placeholder="Введите номер рейса"
+                value=""
+                onkeyup="this.setAttribute('value', this.value)"
+            >
 
             <table class="timetable">
-                <colgroup>
-                    <col>
-                    <col>
-                    <col>
-                    <col>
-                    <col>
-                    <col>
-                    <col>
-                    <col>
-                </colgroup>
-                <tr>
-                    <th>Тип рейса</th>
-                    <th>Рейс №</th>
-                    <th>Авиакомпания</th>
-                    <th>Тип <abbr title="Воздушное судно">ВС</abbr></th>
-                    <th>Место назначения</th>
-                    <th>Терминал</th>
-                    <th>Плановое время</th>
-                    <th>Статус</th>
-                </tr>
-
-                <tr>
-                    <td><img src="to.png" alt="Вылет" title="Вылет" class="type"></td>
-                    <td>AZ-3775</td>
-                    <td>
-                        <img
-                            src="http://www.koltsovo.ru/attels/logo4site/56.gif"
-                            alt="Alitalia"
-                            class="logo"
-                            title="Alitalia">
-                    </td>
-                    <td>B-737-800W</td>
-                    <td>Москва</td>
-                    <td>1</td>
-                    <td><time datetime="2015-10-21T08:15:00+04:00">21 Окт 08:15</time></td>
-                    <td class="end">Вылетел</td>
-                </tr>
-                <tr>
-                    <td><img src="from.png" alt="Прилёт" title="Прилёт" class="type"></td>
-                    <td>7R-720</td>
-                    <td>
-                        <img
-                            src="http://www.koltsovo.ru/attels/logo4site/382.gif"
-                            alt="РусЛайн"
-                            class="logo"
-                            title="РусЛайн">
-                    </td>
-                    <td>CRJ-100</td>
-                    <td>Екатеринбург</td>
-                    <td>2</td>
-                    <td><time datetime="2015-10-21T10:00:00+04:00">21 Окт 10:00</time></td>
-                    <td class="end">Приземлился</td>
-                </tr>
-                <tr>
-                    <td><img src="from.png" alt="Прилёт" title="Прилёт" class="type"></td>
-                    <td>S7-55</td>
-                    <td>
-                        <img
-                        src="http://www.koltsovo.ru/attels/logo4site/390.gif"
-                        alt="Сибирь S7"
-                        class="logo"
-                        title="Сибирь S7">
-                    </td>
-                    <td>A-319</td>
-                    <td>Екатеринбург</td>
-                    <td>3</td>
-                    <td><time datetime="2015-10-21T10:05:00+04:00">21 Окт 10:05</time></td>
-                    <td class="warning">
-                        Задерживается до <time datetime="2015-10-21T22:05:00+04:00">22:05</time>
-                    </td>
-                </tr>
-                <tr>
-                    <td><img src="to.png" alt="Вылет" title="Вылет" class="type"></td>
-                    <td>AZ-3784</td>
-                    <td>
-                        <img
-                            src="http://www.koltsovo.ru/attels/logo4site/56.gif"
-                            alt="Alitalia"
-                            class="logo"
-                            title="Alitalia">
-                    </td>
-                    <td>B-737-800W</td>
-                    <td>Москва</td>
-                    <td>1</td>
-                    <td><time datetime="2015-10-21T15:30:00+04:00">21 Окт 15:30</time></td>
-                    <td class="end">Вилетел</td>
-                </tr>
-                <tr>
-                    <td><img src="from.png" alt="Прилёт" title="Прилёт" class="type"></td>
-                    <td>SU-5344</td>
-                    <td>
-                        <img
-                            src="http://www.koltsovo.ru/attels/logo4site/397.gif"
-                            alt="Аэрофлот - Российские Авиалинии"
-                            class="logo"
-                            title="Аэрофлот - Российские Авиалинии">
-                    </td>
-                    <td>A-319</td>
-                    <td>Екатеринбург</td>
-                    <td>4</td>
-                    <td><time datetime="2015-10-21T21:50:00+04:00">21 Окт 12:50</time></td>
-                    <td class="end">Приземлился</td>
-                </tr>
-                <tr>
-                    <td><img src="to.png" alt="Вылет" title="Вылет" class="type"></td>
-                    <td>DP-405</td>
-                    <td>
-                        <img
-                            src="http://www.koltsovo.ru/attels/logo4site/4831.gif"
-                            alt="Победа"
-                            class="logo"
-                            title="Победа">
-                    </td>
-                    <td>B-737-800W</td>
-                    <td>Москва</td>
-                    <td>1</td>
-                    <td><time datetime="2015-10-21T18:15:00+04:00">21 Окт 18:15</time></td>
-                    <td class="end">Посадка закончена</td>
-                </tr>
-                <tr>
-                    <td><img src="to.png" alt="Вылет" title="Вылет" class="type"></td>
-                    <td>S7-56</td>
-                    <td>
-                        <img
+                <thead>
+                    <tr>
+                        <th>Тип рейса</th>
+                        <th>Рейс №</th>
+                        <th>Авиакомпания</th>
+                        <th>Тип <abbr title="Воздушное судно">ВС</abbr></th>
+                        <th>Место назначения</th>
+                        <th>Терминал</th>
+                        <th>Плановое время</th>
+                        <th>Статус</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-city="Москва" data-flight-type="to" data-flight="AZ-3775">
+                        <td>
+                            <img
+                                src="https://cloud.githubusercontent.com/assets/15046673/10729644/9b49b7d0-7c0c-11e5-955a-ee3a06d34e0e.png"
+                                alt="Вылет"
+                                title="Вылет"
+                                class="type">
+                        </td>
+                        <td>AZ-3775</td>
+                        <td>
+                            <img
+                                src="http://www.koltsovo.ru/attels/logo4site/56.gif"
+                                alt="Alitalia"
+                                class="logo"
+                                title="Alitalia">
+                        </td>
+                        <td>B-737-800W</td>
+                        <td>Москва</td>
+                        <td>-</td>
+                        <td><time datetime="2015-10-21T08:15:00+04:00">21 Окт 08:15</time></td>
+                        <td class="end">Вылетел</td>
+                    </tr>
+                    <tr data-city="Екатеринбург" data-flight-type="from" data-flight="7R-720">
+                        <td>
+                            <img
+                                src="https://cloud.githubusercontent.com/assets/15046673/10730564/931f1324-7c12-11e5-95d3-58219e99db88.png"
+                                alt="Прилёт"
+                                title="Прилёт"
+                                class="type">
+                        </td>
+                        <td>7R-720</td>
+                        <td>
+                            <img
+                                src="http://www.koltsovo.ru/attels/logo4site/382.gif"
+                                alt="РусЛайн"
+                                class="logo"
+                                title="РусЛайн">
+                        </td>
+                        <td>CRJ-100</td>
+                        <td>Екатеринбург</td>
+                        <td>-</td>
+                        <td><time datetime="2015-10-21T10:00:00+04:00">21 Окт 10:00</time></td>
+                        <td class="end">Приземлился</td>
+                    </tr>
+                    <tr data-city="Екатеринбург" data-flight-type="from" data-flight="S7-55">
+                        <td>
+                            <img
+                                src="https://cloud.githubusercontent.com/assets/15046673/10730564/931f1324-7c12-11e5-95d3-58219e99db88.png"
+                                alt="Прилёт"
+                                title="Прилёт"
+                                class="type">
+                        </td>
+                        <td>S7-55</td>
+                        <td>
+                            <img
                             src="http://www.koltsovo.ru/attels/logo4site/390.gif"
                             alt="Сибирь S7"
                             class="logo"
                             title="Сибирь S7">
-                    </td>
-                    <td>A-319</td>
-                    <td>Москва</td>
-                    <td>6</td>
-                    <td><time datetime="2015-10-22T00:15:00+04:00">22 Окт 00:15</time></td>
-                    <td class="on-time">Регистрация</td>
-                </tr>
-                <tr>
-                    <td><img src="to.png" alt="Вылет" title="Вылет" class="type"></td>
-                    <td>SU-5853</td>
-                    <td>
-                    <img
-                        src="http://www.koltsovo.ru/attels/logo4site/397.gif"
-                        alt="Аэрофлот - Российские Авиалинии"
-                        class="logo"
-                        title="Аэрофлот - Российские Авиалинии">
-                    </td>
-                    <td>B-737-800W</td>
-                    <td>Симферополь</td>
-                    <td>1</td>
-                    <td><time datetime="2015-10-21T16:15:00+04:00">21 Окт 16:15</time></td>
-                    <td class="end">Посадка закончена</td>
-                </tr>
-                <tr>
-                    <td><img src="to.png" alt="Вылет" title="Вылет" class="type"></td>
-                    <td>SU-5345</td>
-                    <td>
+                        </td>
+                        <td>A-319</td>
+                        <td>Екатеринбург</td>
+                        <td>3</td>
+                        <td><time datetime="2015-10-21T10:05:00+04:00">21 Окт 10:05</time></td>
+                        <td class="warning">
+                            Задерживается до <time datetime="2015-10-21T22:05:00+04:00">22:05</time>
+                        </td>
+                    </tr>
+                    <tr data-city="Москва" data-flight-type="to" data-flight="AZ-3785">
+                        <td>
+                            <img
+                                src="https://cloud.githubusercontent.com/assets/15046673/10729644/9b49b7d0-7c0c-11e5-955a-ee3a06d34e0e.png"
+                                alt="Вылет"
+                                title="Вылет"
+                                class="type">
+                        </td>
+                        <td>AZ-3785</td>
+                        <td>
+                            <img
+                                src="http://www.koltsovo.ru/attels/logo4site/56.gif"
+                                alt="Alitalia"
+                                class="logo"
+                                title="Alitalia">
+                        </td>
+                        <td>B-737-800W</td>
+                        <td>Москва</td>
+                        <td>-</td>
+                        <td><time datetime="2015-10-21T15:30:00+04:00">21 Окт 15:30</time></td>
+                        <td class="end">Вилетел</td>
+                    </tr>
+                    <tr data-city="Екатеринбург" data-flight-type="from" data-flight="SU-5344">
+                        <td>
+                            <img
+                                src="https://cloud.githubusercontent.com/assets/15046673/10730564/931f1324-7c12-11e5-95d3-58219e99db88.png"
+                                alt="Прилёт"
+                                title="Прилёт"
+                                class="type">
+                        </td>
+                        <td>SU-5344</td>
+                        <td>
+                            <img
+                                src="http://www.koltsovo.ru/attels/logo4site/397.gif"
+                                alt="Аэрофлот - Российские Авиалинии"
+                                class="logo"
+                                title="Аэрофлот - Российские Авиалинии">
+                        </td>
+                        <td>A-319</td>
+                        <td>Екатеринбург</td>
+                        <td>-</td>
+                        <td><time datetime="2015-10-21T21:50:00+04:00">21 Окт 12:50</time></td>
+                        <td class="end">Приземлился</td>
+                    </tr>
+                    <tr data-city="Москва" data-flight-type="to" data-flight="DP-405">
+                        <td>
+                            <img
+                                src="https://cloud.githubusercontent.com/assets/15046673/10729644/9b49b7d0-7c0c-11e5-955a-ee3a06d34e0e.png"
+                                alt="Вылет"
+                                title="Вылет"
+                                class="type">
+                        </td>
+                        <td>DP-405</td>
+                        <td>
+                            <img
+                                src="http://www.koltsovo.ru/attels/logo4site/4831.gif"
+                                alt="Победа"
+                                class="logo"
+                                title="Победа">
+                        </td>
+                        <td>B-737-800W</td>
+                        <td>Москва</td>
+                        <td>-</td>
+                        <td><time datetime="2015-10-21T18:15:00+04:00">21 Окт 18:15</time></td>
+                        <td class="end">Посадка закончена</td>
+                    </tr>
+                    <tr data-city="Москва" data-flight-type="to" data-flight="S7-56">
+                        <td>
+                            <img
+                                src="https://cloud.githubusercontent.com/assets/15046673/10729644/9b49b7d0-7c0c-11e5-955a-ee3a06d34e0e.png"
+                                alt="Вылет"
+                                title="Вылет"
+                                class="type">
+                        </td>
+                        <td>S7-56</td>
+                        <td>
+                            <img
+                                src="http://www.koltsovo.ru/attels/logo4site/390.gif"
+                                alt="Сибирь S7"
+                                class="logo"
+                                title="Сибирь S7">
+                        </td>
+                        <td>A-319</td>
+                        <td>Москва</td>
+                        <td>6</td>
+                        <td><time datetime="2015-10-22T00:15:00+04:00">22 Окт 00:15</time></td>
+                        <td class="on-time">Регистрация</td>
+                    </tr>
+                    <tr data-city="Симферополь" data-flight-type="to" data-flight="SU-5853">
+                        <td>
+                            <img
+                                src="https://cloud.githubusercontent.com/assets/15046673/10729644/9b49b7d0-7c0c-11e5-955a-ee3a06d34e0e.png"
+                                alt="Вылет"
+                                title="Вылет"
+                                class="type">
+                        </td>
+                        <td>SU-5853</td>
+                        <td>
                         <img
                             src="http://www.koltsovo.ru/attels/logo4site/397.gif"
                             alt="Аэрофлот - Российские Авиалинии"
                             class="logo"
                             title="Аэрофлот - Российские Авиалинии">
-                    </td>
-                    <td>A-319</td>
-                    <td>Краснодар</td>
-                    <td>5</td>
-                    <td><time datetime="2015-10-21T17:45:00+04:00">21 Окт 17:45</time></td>
-                    <td class="on-time">Регистрация</td>
-                </tr>
-                <tr>
-                    <td><img src="from.png" alt="Прилёт" title="Прилёт" class="type"></td>
-                    <td>AZ-3784</td>
-                    <td>
-                        <img
-                            src="http://www.koltsovo.ru/attels/logo4site/56.gif"
-                            alt="Alitalia"
-                            class="logo"
-                            title="Alitalia">
-                    </td>
-                    <td>B-737-800W</td>
-                    <td>Екатеринбург</td>
-                    <td>1</td>
-                    <td><time datetime="2015-10-21T13:30:00+04:00">21 Окт 13:30</time></td>
-                    <td class="end">Приземлился</td>
-                </tr>
-                <tr>
-                    <td><img src="to.png" alt="Вылет" title="Вылет" class="type"></td>
-                    <td>UT-128</td>
-                    <td>
-                        <img
-                            src="http://www.koltsovo.ru/attels/logo4site/515.gif"
-                            alt="ЮТэйр" class="logo" title="ЮТэйр">
-                    </td>
-                    <td>AT-72-5</td>
-                    <td>Сургут</td>
-                    <td>3</td>
-                    <td><time datetime="2015-10-22T19:50:00+04:00">22 Окт 19:50</time></td>
-                    <td class="onTime">Регистрация</td>
-                </tr>
-                <tr>
-                    <td><img src="to.png" alt="Вылет" title="Вылет" class="type"></td>
-                    <td>S7-56</td>
-                    <td>
-                        <img
-                            src="http://www.koltsovo.ru/attels/logo4site/390.gif"
-                            alt="Сибирь S7" class="logo" title="Сибирь S7">
-                    </td>
-                    <td>B-737-800W</td>
-                    <td>Москва</td>
-                    <td>5</td>
-                    <td><time datetime="2015-10-21T23:10:00+04:00">21 Окт 23:10</time></td>
-                    <td class="warning">Отменён</td>
-                </tr>
-                <tr>
-                    <td><img src="to.png" alt="Вылет" title="Вылет" class="type"></td>
-                    <td>DP-408</td>
-                    <td>
-                        <img
-                            src="http://www.koltsovo.ru/attels/logo4site/4831.gif"
-                            alt="Победа" class="logo" title="Победа">
-                    </td>
-                    <td>B-737-800W</td>
-                    <td>Москва</td>
-                    <td>3</td>
-                    <td><time datetime="2015-10-21T16:50:00+04:00">21 Окт 16:50</time></td>
-                    <td class="on-time">Ожидание посадки</td>
-                </tr>
-                <tr>
-                    <td><img src="to.png" alt="Вылет" title="Вылет" class="type"></td>
-                    <td>S7-4571</td>
-                    <td>
-                        <img
-                            src="http://www.koltsovo.ru/attels/logo4site/390.gif"
-                            alt="Сибирь S7" class="logo" title="Сибирь S7">
-                    </td>
-                    <td>A-319</td>
-                    <td>Пекин</td>
-                    <td>3</td>
-                    <td><time datetime="2015-10-22T19:00:00+04:00">21 Окт 19:00</time></td>
-                    <td class="on-time">Регистрация</td>
-                </tr>
-                <tr>
-                    <td><img src="from.png" alt="Прилёт" title="Прилёт" class="type"></td>
-                    <td>UT-4109</td>
-                    <td>
-                        <img
-                            src="http://www.koltsovo.ru/attels/logo4site/515.gif"
-                            alt="ЮТэйр" class="logo" title="ЮТэйр">
-                    </td>
-                    <td>B-737-700</td>
-                    <td>Екатеринбург</td>
-                    <td>-</td>
-                    <td><time datetime="2015-10-22T00:25:00+04:00">22 Окт 00:25</time></td>
-                    <td class="in-process">Летит</td>
-                </tr>
+                        </td>
+                        <td>B-737-800W</td>
+                        <td>Симферополь</td>
+                        <td>-</td>
+                        <td><time datetime="2015-10-21T16:15:00+04:00">21 Окт 16:15</time></td>
+                        <td class="end">Посадка закончена</td>
+                    </tr>
+                    <tr data-city="Краснодар" data-flight-type="to" data-flight="SU-5345">
+                        <td>
+                            <img
+                                src="https://cloud.githubusercontent.com/assets/15046673/10729644/9b49b7d0-7c0c-11e5-955a-ee3a06d34e0e.png"
+                                alt="Вылет"
+                                title="Вылет"
+                                class="type">
+                        </td>
+                        <td>SU-5345</td>
+                        <td>
+                            <img
+                                src="http://www.koltsovo.ru/attels/logo4site/397.gif"
+                                alt="Аэрофлот - Российские Авиалинии"
+                                class="logo"
+                                title="Аэрофлот - Российские Авиалинии">
+                        </td>
+                        <td>A-319</td>
+                        <td>Краснодар</td>
+                        <td>5</td>
+                        <td><time datetime="2015-10-21T17:45:00+04:00">21 Окт 17:45</time></td>
+                        <td class="on-time">Регистрация</td>
+                    </tr>
+                    <tr data-city="Екатеринбург" data-flight-type="from" data-flight="AZ-3784">
+                        <td>
+                            <img
+                                src="https://cloud.githubusercontent.com/assets/15046673/10730564/931f1324-7c12-11e5-95d3-58219e99db88.png"
+                                alt="Прилёт"
+                                title="Прилёт"
+                                class="type">
+                        </td>
+                        <td>AZ-3784</td>
+                        <td>
+                            <img
+                                src="http://www.koltsovo.ru/attels/logo4site/56.gif"
+                                alt="Alitalia"
+                                class="logo"
+                                title="Alitalia">
+                        </td>
+                        <td>B-737-800W</td>
+                        <td>Екатеринбург</td>
+                        <td>-</td>
+                        <td><time datetime="2015-10-21T13:30:00+04:00">21 Окт 13:30</time></td>
+                        <td class="end">Приземлился</td>
+                    </tr>
+                    <tr data-city="Сургут" data-flight-type="to" data-flight="UT-128">
+                        <td>
+                            <img
+                                src="https://cloud.githubusercontent.com/assets/15046673/10729644/9b49b7d0-7c0c-11e5-955a-ee3a06d34e0e.png"
+                                alt="Вылет"
+                                title="Вылет"
+                                class="type">
+                        </td>
+                        <td>UT-128</td>
+                        <td>
+                            <img
+                                src="http://www.koltsovo.ru/attels/logo4site/515.gif"
+                                alt="ЮТэйр" class="logo" title="ЮТэйр">
+                        </td>
+                        <td>AT-72-5</td>
+                        <td>Сургут</td>
+                        <td>3</td>
+                        <td><time datetime="2015-10-22T19:50:00+04:00">22 Окт 19:50</time></td>
+                        <td class="on-time">Регистрация</td>
+                    </tr>
+                    <tr data-city="Москва" data-flight-type="to" data-flight="S7-60">
+                        <td>
+                            <img
+                                src="https://cloud.githubusercontent.com/assets/15046673/10729644/9b49b7d0-7c0c-11e5-955a-ee3a06d34e0e.png"
+                                alt="Вылет"
+                                title="Вылет"
+                                class="type">
+                        </td>
+                        <td>S7-60</td>
+                        <td>
+                            <img
+                                src="http://www.koltsovo.ru/attels/logo4site/390.gif"
+                                alt="Сибирь S7" class="logo" title="Сибирь S7">
+                        </td>
+                        <td>B-737-800W</td>
+                        <td>Москва</td>
+                        <td>-</td>
+                        <td><time datetime="2015-10-21T23:10:00+04:00">21 Окт 23:10</time></td>
+                        <td class="warning">Отменён</td>
+                    </tr>
+                    <tr data-city="Москва" data-flight-type="to" data-flight="DP-408">
+                        <td>
+                            <img
+                                src="https://cloud.githubusercontent.com/assets/15046673/10729644/9b49b7d0-7c0c-11e5-955a-ee3a06d34e0e.png"
+                                alt="Вылет"
+                                title="Вылет"
+                                class="type">
+                        </td>
+                        <td>DP-408</td>
+                        <td>
+                            <img
+                                src="http://www.koltsovo.ru/attels/logo4site/4831.gif"
+                                alt="Победа"
+                                class="logo"
+                                title="Победа">
+                        </td>
+                        <td>B-737-800W</td>
+                        <td>Москва</td>
+                        <td>3</td>
+                        <td><time datetime="2015-10-21T16:50:00+04:00">21 Окт 16:50</time></td>
+                        <td class="on-time">Ожидание посадки</td>
+                    </tr>
+                    <tr data-city="Пекин" data-flight-type="to" data-flight="S7-4571">
+                        <td>
+                            <img
+                                src="https://cloud.githubusercontent.com/assets/15046673/10729644/9b49b7d0-7c0c-11e5-955a-ee3a06d34e0e.png"
+                                alt="Вылет"
+                                title="Вылет"
+                                class="type">
+                        </td>
+                        <td>S7-4571</td>
+                        <td>
+                            <img
+                                src="http://www.koltsovo.ru/attels/logo4site/390.gif"
+                                alt="Сибирь S7"
+                                class="logo"
+                                title="Сибирь S7">
+                        </td>
+                        <td>A-319</td>
+                        <td>Пекин</td>
+                        <td>3</td>
+                        <td><time datetime="2015-10-22T19:00:00+04:00">21 Окт 19:00</time></td>
+                        <td class="on-time">Регистрация</td>
+                    </tr>
+                    <tr data-city="Екатеринбург" data-flight-type="from" data-flight="UT-4109">
+                        <td>
+                            <img
+                                src="https://cloud.githubusercontent.com/assets/15046673/10730564/931f1324-7c12-11e5-95d3-58219e99db88.png"
+                                alt="Прилёт"
+                                title="Прилёт"
+                                class="type">
+                        </td>
+                        <td>UT-4109</td>
+                        <td>
+                            <img
+                                src="http://www.koltsovo.ru/attels/logo4site/515.gif"
+                                alt="ЮТэйр"
+                                class="logo"
+                                title="ЮТэйр">
+                        </td>
+                        <td>B-737-700</td>
+                        <td>Екатеринбург</td>
+                        <td>-</td>
+                        <td><time datetime="2015-10-22T00:25:00+04:00">22 Окт 00:25</time></td>
+                        <td class="in-process">Летит</td>
+                    </tr>
+                </tbody>
             </table>
         </section>
         <section>
@@ -282,7 +387,7 @@
                 <label for="email" class="label">Email:</label>
                 <input
                     type="email"
-                    class="input"
+                    class="send-info"
                     id="email"
                     name="email"
                     placeholder="email@example.com"
@@ -291,12 +396,12 @@
                 <input
                     type="tel"
                     id="phone"
-                    class="input"
+                    class="send-info"
                     name="phone"
                     placeholder="79000000000"
                     pattern="[0-9]{11,16}"
                     required>
-                <button type="submit" class="send-button">
+                <button type="submit" class="send-info">
                     Отправить данные о рейсе на телефон
                 </button>
             </form>
