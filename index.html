@@ -1,410 +1,248 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Лет ми спик фром май харт</title>
+        <title>Los Angeles Daily Times</title>
         <link rel="stylesheet" href="index.css">
     </head>
-    <body>
-        <header>
-            <h1>Расписание рейсов</h1>
-        </header>
-        <section>
-            <label for="city" class="city">Фильтр по городу:</label>
-            <input
-                id="city"
-                class="city"
-                placeholder="Введите город"
-                value=""
-                onkeyup="this.setAttribute('value', this.value)"
-            ><br>
-
-            <label for="flight-type" class="flight-type">Фильтр по типу рейса:</label>
-            <input type="radio" name="flight-type" id="flight-type" class="flight-type" value="" checked>Все
-            <input type="radio" name="flight-type" id="flight-type" class="flight-type" value="from">Прилёт
-            <input type="radio" name="flight-type" id="flight-type" class="flight-type" value="to">Вылет<br>
-
-            <label for="flight" class="flight">Фильтр по номеру рейса:</label>
-            <input
-                id="flight"
-                class="flight"
-                placeholder="Введите номер рейса"
-                value=""
-                onkeyup="this.setAttribute('value', this.value)"
-            >
-
-            <table class="timetable">
-                <thead>
-                    <tr>
-                        <th>Тип рейса</th>
-                        <th>Рейс №</th>
-                        <th>Авиакомпания</th>
-                        <th>Тип <abbr title="Воздушное судно">ВС</abbr></th>
-                        <th>Место назначения</th>
-                        <th>Терминал</th>
-                        <th>Плановое время</th>
-                        <th>Статус</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr data-city="Москва" data-flight-type="to" data-flight="AZ-3775">
-                        <td>
-                            <img
-                                src="http://su0.ru/G6ua"
-                                alt="Вылет"
-                                title="Вылет"
-                                class="type">
-                        </td>
-                        <td>AZ-3775</td>
-                        <td>
-                            <img
-                                src="http://www.koltsovo.ru/attels/logo4site/56.gif"
-                                alt="Alitalia"
-                                class="logo"
-                                title="Alitalia">
-                        </td>
-                        <td>B-737-800W</td>
-                        <td>Москва</td>
-                        <td>-</td>
-                        <td><time datetime="2015-10-21T08:15:00+04:00">21 Окт 08:15</time></td>
-                        <td class="end">Вылетел</td>
-                    </tr>
-                    <tr data-city="Екатеринбург" data-flight-type="from" data-flight="7R-720">
-                        <td>
-                            <img
-                                src="http://su0.ru/NJcC"
-                                alt="Прилёт"
-                                title="Прилёт"
-                                class="type">
-                        </td>
-                        <td>7R-720</td>
-                        <td>
-                            <img
-                                src="http://www.koltsovo.ru/attels/logo4site/382.gif"
-                                alt="РусЛайн"
-                                class="logo"
-                                title="РусЛайн">
-                        </td>
-                        <td>CRJ-100</td>
-                        <td>Екатеринбург</td>
-                        <td>-</td>
-                        <td><time datetime="2015-10-21T10:00:00+04:00">21 Окт 10:00</time></td>
-                        <td class="end">Приземлился</td>
-                    </tr>
-                    <tr data-city="Екатеринбург" data-flight-type="from" data-flight="S7-55">
-                        <td>
-                            <img
-                                src="http://su0.ru/NJcC"
-                                alt="Прилёт"
-                                title="Прилёт"
-                                class="type">
-                        </td>
-                        <td>S7-55</td>
-                        <td>
-                            <img
-                            src="http://www.koltsovo.ru/attels/logo4site/390.gif"
-                            alt="Сибирь S7"
-                            class="logo"
-                            title="Сибирь S7">
-                        </td>
-                        <td>A-319</td>
-                        <td>Екатеринбург</td>
-                        <td>3</td>
-                        <td><time datetime="2015-10-21T10:05:00+04:00">21 Окт 10:05</time></td>
-                        <td class="warning">
-                            Задерживается до <time datetime="2015-10-21T22:05:00+04:00">22:05</time>
-                        </td>
-                    </tr>
-                    <tr data-city="Москва" data-flight-type="to" data-flight="AZ-3785">
-                        <td>
-                            <img
-                                src="http://su0.ru/G6ua"
-                                alt="Вылет"
-                                title="Вылет"
-                                class="type">
-                        </td>
-                        <td>AZ-3785</td>
-                        <td>
-                            <img
-                                src="http://www.koltsovo.ru/attels/logo4site/56.gif"
-                                alt="Alitalia"
-                                class="logo"
-                                title="Alitalia">
-                        </td>
-                        <td>B-737-800W</td>
-                        <td>Москва</td>
-                        <td>-</td>
-                        <td><time datetime="2015-10-21T15:30:00+04:00">21 Окт 15:30</time></td>
-                        <td class="end">Вилетел</td>
-                    </tr>
-                    <tr data-city="Екатеринбург" data-flight-type="from" data-flight="SU-5344">
-                        <td>
-                            <img
-                                src="http://su0.ru/NJcC"
-                                alt="Прилёт"
-                                title="Прилёт"
-                                class="type">
-                        </td>
-                        <td>SU-5344</td>
-                        <td>
-                            <img
-                                src="http://www.koltsovo.ru/attels/logo4site/397.gif"
-                                alt="Аэрофлот - Российские Авиалинии"
-                                class="logo"
-                                title="Аэрофлот - Российские Авиалинии">
-                        </td>
-                        <td>A-319</td>
-                        <td>Екатеринбург</td>
-                        <td>-</td>
-                        <td><time datetime="2015-10-21T21:50:00+04:00">21 Окт 12:50</time></td>
-                        <td class="end">Приземлился</td>
-                    </tr>
-                    <tr data-city="Москва" data-flight-type="to" data-flight="DP-405">
-                        <td>
-                            <img
-                                src="http://su0.ru/G6ua"
-                                alt="Вылет"
-                                title="Вылет"
-                                class="type">
-                        </td>
-                        <td>DP-405</td>
-                        <td>
-                            <img
-                                src="http://www.koltsovo.ru/attels/logo4site/4831.gif"
-                                alt="Победа"
-                                class="logo"
-                                title="Победа">
-                        </td>
-                        <td>B-737-800W</td>
-                        <td>Москва</td>
-                        <td>-</td>
-                        <td><time datetime="2015-10-21T18:15:00+04:00">21 Окт 18:15</time></td>
-                        <td class="end">Посадка закончена</td>
-                    </tr>
-                    <tr data-city="Москва" data-flight-type="to" data-flight="S7-56">
-                        <td>
-                            <img
-                                src="http://su0.ru/G6ua"
-                                alt="Вылет"
-                                title="Вылет"
-                                class="type">
-                        </td>
-                        <td>S7-56</td>
-                        <td>
-                            <img
-                                src="http://www.koltsovo.ru/attels/logo4site/390.gif"
-                                alt="Сибирь S7"
-                                class="logo"
-                                title="Сибирь S7">
-                        </td>
-                        <td>A-319</td>
-                        <td>Москва</td>
-                        <td>6</td>
-                        <td><time datetime="2015-10-22T00:15:00+04:00">22 Окт 00:15</time></td>
-                        <td class="on-time">Регистрация</td>
-                    </tr>
-                    <tr data-city="Симферополь" data-flight-type="to" data-flight="SU-5853">
-                        <td>
-                            <img
-                                src="http://su0.ru/G6ua"
-                                alt="Вылет"
-                                title="Вылет"
-                                class="type">
-                        </td>
-                        <td>SU-5853</td>
-                        <td>
-                        <img
-                            src="http://www.koltsovo.ru/attels/logo4site/397.gif"
-                            alt="Аэрофлот - Российские Авиалинии"
-                            class="logo"
-                            title="Аэрофлот - Российские Авиалинии">
-                        </td>
-                        <td>B-737-800W</td>
-                        <td>Симферополь</td>
-                        <td>-</td>
-                        <td><time datetime="2015-10-21T16:15:00+04:00">21 Окт 16:15</time></td>
-                        <td class="end">Посадка закончена</td>
-                    </tr>
-                    <tr data-city="Краснодар" data-flight-type="to" data-flight="SU-5345">
-                        <td>
-                            <img
-                                src="http://su0.ru/G6ua"
-                                alt="Вылет"
-                                title="Вылет"
-                                class="type">
-                        </td>
-                        <td>SU-5345</td>
-                        <td>
-                            <img
-                                src="http://www.koltsovo.ru/attels/logo4site/397.gif"
-                                alt="Аэрофлот - Российские Авиалинии"
-                                class="logo"
-                                title="Аэрофлот - Российские Авиалинии">
-                        </td>
-                        <td>A-319</td>
-                        <td>Краснодар</td>
-                        <td>5</td>
-                        <td><time datetime="2015-10-21T17:45:00+04:00">21 Окт 17:45</time></td>
-                        <td class="on-time">Регистрация</td>
-                    </tr>
-                    <tr data-city="Екатеринбург" data-flight-type="from" data-flight="AZ-3784">
-                        <td>
-                            <img
-                                src="http://su0.ru/NJcC"
-                                alt="Прилёт"
-                                title="Прилёт"
-                                class="type">
-                        </td>
-                        <td>AZ-3784</td>
-                        <td>
-                            <img
-                                src="http://www.koltsovo.ru/attels/logo4site/56.gif"
-                                alt="Alitalia"
-                                class="logo"
-                                title="Alitalia">
-                        </td>
-                        <td>B-737-800W</td>
-                        <td>Екатеринбург</td>
-                        <td>-</td>
-                        <td><time datetime="2015-10-21T13:30:00+04:00">21 Окт 13:30</time></td>
-                        <td class="end">Приземлился</td>
-                    </tr>
-                    <tr data-city="Сургут" data-flight-type="to" data-flight="UT-128">
-                        <td>
-                            <img
-                                src="http://su0.ru/G6ua"
-                                alt="Вылет"
-                                title="Вылет"
-                                class="type">
-                        </td>
-                        <td>UT-128</td>
-                        <td>
-                            <img
-                                src="http://www.koltsovo.ru/attels/logo4site/515.gif"
-                                alt="ЮТэйр" class="logo" title="ЮТэйр">
-                        </td>
-                        <td>AT-72-5</td>
-                        <td>Сургут</td>
-                        <td>3</td>
-                        <td><time datetime="2015-10-22T19:50:00+04:00">22 Окт 19:50</time></td>
-                        <td class="on-time">Регистрация</td>
-                    </tr>
-                    <tr data-city="Москва" data-flight-type="to" data-flight="S7-60">
-                        <td>
-                            <img
-                                src="http://su0.ru/G6ua"
-                                alt="Вылет"
-                                title="Вылет"
-                                class="type">
-                        </td>
-                        <td>S7-60</td>
-                        <td>
-                            <img
-                                src="http://www.koltsovo.ru/attels/logo4site/390.gif"
-                                alt="Сибирь S7" class="logo" title="Сибирь S7">
-                        </td>
-                        <td>B-737-800W</td>
-                        <td>Москва</td>
-                        <td>-</td>
-                        <td><time datetime="2015-10-21T23:10:00+04:00">21 Окт 23:10</time></td>
-                        <td class="warning">Отменён</td>
-                    </tr>
-                    <tr data-city="Москва" data-flight-type="to" data-flight="DP-408">
-                        <td>
-                            <img
-                                src="http://su0.ru/G6ua"
-                                alt="Вылет"
-                                title="Вылет"
-                                class="type">
-                        </td>
-                        <td>DP-408</td>
-                        <td>
-                            <img
-                                src="http://www.koltsovo.ru/attels/logo4site/4831.gif"
-                                alt="Победа"
-                                class="logo"
-                                title="Победа">
-                        </td>
-                        <td>B-737-800W</td>
-                        <td>Москва</td>
-                        <td>3</td>
-                        <td><time datetime="2015-10-21T16:50:00+04:00">21 Окт 16:50</time></td>
-                        <td class="on-time">Ожидание посадки</td>
-                    </tr>
-                    <tr data-city="Пекин" data-flight-type="to" data-flight="S7-4571">
-                        <td>
-                            <img
-                                src="http://su0.ru/G6ua"
-                                alt="Вылет"
-                                title="Вылет"
-                                class="type">
-                        </td>
-                        <td>S7-4571</td>
-                        <td>
-                            <img
-                                src="http://www.koltsovo.ru/attels/logo4site/390.gif"
-                                alt="Сибирь S7"
-                                class="logo"
-                                title="Сибирь S7">
-                        </td>
-                        <td>A-319</td>
-                        <td>Пекин</td>
-                        <td>3</td>
-                        <td><time datetime="2015-10-22T19:00:00+04:00">21 Окт 19:00</time></td>
-                        <td class="on-time">Регистрация</td>
-                    </tr>
-                    <tr data-city="Екатеринбург" data-flight-type="from" data-flight="UT-4109">
-                        <td>
-                            <img
-                                src="http://su0.ru/NJcC"
-                                alt="Прилёт"
-                                title="Прилёт"
-                                class="type">
-                        </td>
-                        <td>UT-4109</td>
-                        <td>
-                            <img
-                                src="http://www.koltsovo.ru/attels/logo4site/515.gif"
-                                alt="ЮТэйр"
-                                class="logo"
-                                title="ЮТэйр">
-                        </td>
-                        <td>B-737-700</td>
-                        <td>Екатеринбург</td>
-                        <td>-</td>
-                        <td><time datetime="2015-10-22T00:25:00+04:00">22 Окт 00:25</time></td>
-                        <td class="in-process">Летит</td>
-                    </tr>
-                </tbody>
+    <body class="newspaper">
+        <label for="black">Белые буквы на черном фоне:</label>
+        <input type="checkbox" id="black">
+        <header class="newspaper-header">
+            <table class="three-colomn-header">
+                <tr>
+                    <td>
+                        <div class="dotted bold">
+                            <h3 class="h no-indent">Editornal Section</h3>
+                            <h6 class="big-letters h no-indent">part II sheet: 10 pages</h6>
+                        </div>
+                    </td>
+                    <td class="table-center bold no-indent">
+                        <h1 class="no-indent newspaper-caption">Los Angeles Daily Times</h1>
+                    </td>
+                    <td>
+                        <div class="dotted bold">
+                            <h3 class="h no-indent">California del Sur.</h3>
+                            <h6 class="big-letters h no-indent">city and country</h6>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="solid-top solid-bottom big-letters bold">
+                        XXVII<sup>th</sup> year
+                    </td>
+                    <td class="table-center solid-top solid-bottom big-letters bold">
+                        <time datetime="1908-13-02">thursday morning, february 13, 1908</time>
+                    </td>
+                    <td class="solid-top solid-bottom big-letters bold">
+                        5 cents
+                    </td>
+                </tr>
             </table>
-        </section>
-        <section>
-            <header>
-                <h2>Получить информацию о рейсе</h2>
-            </header>
-            <p>Чтобы получить информацию о Вашем рейсе, введите свои контактные данные.</p>
-            <form class="send-info">
-                <label for="email" class="label">Email:</label>
-                <input
-                    type="email"
-                    class="send-info"
-                    id="email"
-                    name="email"
-                    placeholder="email@example.com"
-                    required>
-                <label for="phone" class="label">Номер телефона:</label>
-                <input
-                    type="tel"
-                    id="phone"
-                    class="send-info"
-                    name="phone"
-                    placeholder="79000000000"
-                    pattern="[0-9]{11,16}"
-                    required>
-                <button type="submit" class="send-info">
-                    Отправить данные о рейсе на телефон
-                </button>
-            </form>
-        </section>
+        </header>
+        <main class="newspaper-body">
+            <section>
+                <table class="three-colomn-header small">
+                    <tr>
+                        <td>
+                            <p>
+                                East<br>
+                                Side of<br>
+                                Broadway
+                            </p>
+                        </td>
+                        <td class="table-center">
+                            <p>
+                                B BlackstoneCo<br>
+                                <span class="big-letters">DRY GOODS</span><br>
+                                318-320-322<br>
+                                <span class="big-letters">5 BROADWAW</span>
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                Between<br>
+                                Third and<br>
+                                Fourth Sts
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <article class="article">
+                <header>
+                    <h2 class="first-cap h">Snap Prices On Standard Pianos</h2>
+                    <hr class="line">
+                    <h3 class="h">Many Bargains in Our Closing Out Sale of New Instruments</h3>
+                </header>
+                <p>
+                    Ev&shy;ery day is a big day in this sale – we are putting out more pianos than
+                    ev&shy;er before, breaking all pre&shy;vi&shy;ous records. The success of this
+                    sale is the result of hon&shy;est advertis&shy;ing, and fair pric&shy;ing
+                    of high grade in&shy;stru&shy;ments.
+                </p>
+                <p>
+                    We have to close out six agencies — ev&shy;ery new piano out&shy;side the
+                    Steinway, Xran&shy;ich & Bach, Sohmer and Kurtzmann must be moved off our floors
+                    at once. In or&shy;der to accomplish our purpose all Emer&shy;son,
+                    <span class="letter-spacing">Estey</span>, Sterling, Hant&shy;ington, Laffargue,
+                    Mendelssohn pianos must go at cost or less than cost.
+                </p>
+                <p>
+                    We have closed all our branch stores in South&shy;ern California – this means
+                    that over forty pianos have been sent to the store in Los An&shy;ge&shy;les to
+                    be disposed of. These in&shy;stru&shy;ments so into our clos&shy;ing out sale
+                    at extremely low prices. Here are some of the big specials.
+                </p>
+                <p class="no-text-indent h">
+                    $475 Emer&shy;son Pianos at $230.<br>
+                    $475 Sterling Pianos at $290.<br>
+                    $450 Sterling Pianos at $250.<br>
+                    $350 Hunt&shy;ington Pianos at $195.<br>
+                    $325 Mendelssohn Pianos at $185.
+                </p>
+                <p>
+                    Remember, all the above are absolutely new in&shy;stru&shy;ments. Our
+                    deci&shy;sion to close them out gives won the great&shy;est plano opportunity
+                    ev&shy;er presented in this city. Any in&shy;stru&shy;ment in the sale can be
+                    bought on easy terms. No mat&shy;ter how lit&shy;tle you can afford to pay each
+                    month we can arrange satisfactory terms.
+                </p>
+                <h2 class="first-cap h">A $700 Player Piano For $398</h2>
+                <p>
+                    In this sale you can buy a player piano at the price of an or&shy;dinary
+                    upright with&shy;out the player
+                    <span class="letter-spacing">attach&shy;ment</span>. You can buy $700 players at
+                    $398 and $467; $750 players go at $585. $25 down and $15 a month puts onin your
+                    home with free miusle.
+                </p>
+                <h4 class="big-letters h">Come in today</h4>
+                <p>
+                    If you ev&shy;er expect to buy piano don't miss this opportunity. It's like
+                    may nev&shy;er be presrnted to you again. It is a once-a-lifetime chance to
+                    get a piano at less then wholesale cost.
+                </p>
+            </article>
+            <section>
+                    <h4 class="article first-cap border h">
+                    Victor Recital today<br>
+                    Cecilian Retical tomorrow<br>
+                    soprano: mrs. Hary Dow Dirk
+                    </h4>
+            </section>
+            <article class="article">
+                <h3 class="big-letters h">geo. j. bircel co</h3>
+                <h4>Stelnway, Cecilian and Victor Dealers</h4>
+                <h3 class="first-cap h">345-347 S. Spring st.</h3>
+            </article>
+            <article class="article dotted">
+                <header>
+                    <h3 class="first-letter big-letters h">Two Bits IIIS AS DAMAGES.</h3>
+                    <hr class="line">
+                    <h4 class="first-cap h">
+                        Verdict for Old Plug Hat is the smallest Given in Local Courts.
+                    </h4>
+                    <hr class="line">
+                </header>
+                <p>
+                    Heber Col&shy;erran's old plug hat was worth just 23 cents, accord&shy;ing to
+                    Jus&shy;tice Pierce's ruiing yes&shy;ter&shy;day, and though the for&shy;mer
+                    val&shy;ued the <q>top&shy;per</q> at $8. he went away triumphant because the
+                    small&shy;est ver&shy;dict giv&shy;en in a Los An&shy;ge&shy;les
+                    court al-o carried costs against the defen&shy;dant, Morris T. Berzer, dyer and
+                    cleaner. West Sev&shy;enth street.
+                </p>
+                    <q>I wish I'd nev&shy;er seen the oli hat.</q> exclaimed the lat&shy;ter.
+                    <q>Coherman said he was gol&shy;ing to be married and wanted the thing ironed in
+                    a hurry. My as&shy;sistant told him It was worth&shy;less and ought to go into
+                    the ash barrel. Cole&shy;man said he must have it and promised to pay $1.50.
+                    He didn't come back for it at the time he agreed so, af&shy;ter a long
+                    pe&shy;riod an actor came in and said he wanted an old
+                    plug hat. we offered him Cole&shy;man's at $1.50. He kicked hard at paying that
+                    price, but as he had to have one he finaliy gave in and we came out even.
+                    Then Cole&shy;man turned up and de&shy;manded his hat.</q>
+                <p/>
+                <p>
+                    <q>I nev&shy;er said I was go&shy;ing to get married.</q> tes&shy;ti&shy;fied
+                    Cole&shy;man. <q>it cost me $8 to get a new plug hat, when the old one was good
+                    enough for my purposes and I think I should get that $8.</q>
+                </p>
+                <p>
+                    He went away with the ver&shy;dict tor 25 cents and looked happy.
+                </p>
+            </article>
+            <article>
+                <header>
+                    <h2 class="first-letter big-letters h">STUDENT SEEKS TO UPSET WILL.</h2>
+                    <h3 class="big-letters h">says He is one of Heirs to VAST FortUNE.</h3>
+                </header>
+                <p class="h">
+                    Young Aus&shy;trian Cheva&shy;li&shy;er Entered at col&shy;lege of Medicine of
+                    Uni&shy;versity of South&shy;ern California Fights for Share of Eight Million
+                    Dollars Left by Rel&shy;ative to Breslau.
+                </p>
+                <p>
+                    Quietly pursu&shy;ing his stud&shy;ies as a student of medicine here is a young
+                    Aus&shy;trian, pos&shy;sible help to $8.000.000, a commander and
+                    cheva&shy;li&shy;er of a Portaguese or&shy;der of nobility, and the
+                    rel&shy;ative of a fa&shy;mous general who took part in the conflicts
+                    be&shy;tween Germany and Aus&shy;tria which resulted in the for&shy;mer
+                    obtain&shy;ing Breslau.
+                </p>
+                <p>
+                    Alexander S. Balla is the name under which the chevail&shy;er is entered at
+                    the col&shy;lege of medicine. U.S.C. He rooms at № 210 North Hill street.
+                </p>
+                <p>
+                    <q>Gen. E. Frankel, my grandmoth&shy;er's cousin, has just died at Breslau.</q>
+                    said he yes&shy;ter&shy;day. <q>leav&shy;ing his fortune of 40.000.000 marks,
+                    or $8.000.000 to the hos&shy;pitals there. It is my in&shy;tention to fight the
+                    will as I consid&shy;er it most unjust that my grandmoth&shy;er, moth&shy;er,
+                    my&shy;self and broth&shy;er should be overlookol in the dis&shy;tri&shy;bution
+                    of the estate.
+                </p>
+                <p>
+                    My grandmoth&shy;er, Babette Frankel, is still alive. She is 85 years old, and,
+                    Gen. Frankel was her cousin. He was n Aus&shy;trian, but he stayed in Breslau
+                    af&shy;ter it was cap&shy;tured by the Germans. He was born there, he lived
+                    there all his life, he fought against German occap&shy;ation, and he died there,
+                    and in dying he left ev&shy;ery&shy;thing to the city, which is most unfair tơ
+                    us, his four helrs. The sole rel&shy;atives are my grandmoth&shy;er,
+                    moth&shy;er, broth&shy;er and my&shy;self, and we should share in
+                    the estate with Breslau.
+                </p>
+                <p>
+                    <q>The estate consists of land, houses and mon&shy;ey. Gen. Frankel loaned large
+                    surns to the city of Breslau and he left a huge sum in cash. The mon&shy;ey
+                    lent to the city and expended princirally in building hos&shy;pitals and I
+                    suppose he felt it would be a nice thing to wipe out the debt by his legacy.
+                    But he forgot his rel&shy;atives and we have re&shy;solved to con&shy;test
+                    the will.</q>
+                </p>
+                <p>
+                    <q>Do you think Gen. Frankel desinher&shy;ited you because of any squabble?<q/>
+                    he was asked.
+                </p>
+                <p>
+                    <q>My moth&shy;er's fam&shy;ily had no quarrel with him.</q> was the reply.
+                </p>
+                <p>
+                    Balla came to the United States two years ago from Vi&shy;enna, where his
+                    moth&shy;er and broth&shy;er re&shy;side. He lived in San Francisco for a
+                    few months, but at the time of the earth&shy;quake and fire became to
+                    Los An&shy;ge&shy;les.
+                </p>
+                <p>
+                    <q>If I get my share of this fortune I shal rema in this beautiful South&shy;ern
+                    California.</q> he remarked.
+                </p>
+                <p>
+                    The ti&shy;tles which he holds where confarred on him by the late King
+                    Car&shy;los of Portu&shy;gal. <q>My fam&shy;ily reptered politacal ser&shy;vices
+                    to Portu&shy;gal.</q> said he <q>and the King who has just been
+                    as&shy;sas&shy;sinated rec&shy;ognized these by hon&shy;or&shy;ing me.</q>
+                </p>
+            </article>
+        </main>
     </body>
 </html>
